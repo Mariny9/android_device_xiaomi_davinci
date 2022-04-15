@@ -81,9 +81,12 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_davinci/com.nxp.mifare.xml
 
 # Overlay
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-pa
+PRODUCT_PACKAGES += \
+    AOSPADavinciSystemUI \
+    DavinciFrameworks \
+    DavinciSettings \
+    DavinciSystemUI \
+    WifiResDavinci
 
 # Power
 PRODUCT_COPY_FILES += \
@@ -97,10 +100,6 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
-
-# WiFi
-PRODUCT_PACKAGES += \
-    DavinciWifiOverlay
 
 # Call the proprietary setup
 $(call inherit-product, vendor/xiaomi/davinci/davinci-vendor.mk)
